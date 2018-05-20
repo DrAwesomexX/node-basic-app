@@ -30,11 +30,18 @@ app.use((req,res,next)=>{
     });
     next();
 });
-app.use((req,res,next)=>{
+/*app.use((req,res,next)=>{
     res.render('maintenance.hbs')
-})
+})*/
 app.use(express.static(__dirname + '/public')); 
 
+app.get('/project',(req,res)=>{
+    res.render('projects.hbs',{
+        pageTitle:'welcome to my portfolio',
+        welcomeTitle:'here are some listings'
+
+    });
+});
 app.get('/',(req,res)=>{
     //res.send('<h1>hello Express</h1>');
    /* res.send({
